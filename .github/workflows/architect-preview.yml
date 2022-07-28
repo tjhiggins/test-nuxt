@@ -7,7 +7,6 @@ on:
       - synchronize
       - reopened
       - closed
-  workflow_dispatch:
 
 env:
   ARCHITECT_EMAIL: ${{ secrets.ARCHITECT_EMAIL }}
