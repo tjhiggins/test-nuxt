@@ -14,10 +14,10 @@ on:
 env:
   ARCHITECT_EMAIL: ${{ secrets.ARCHITECT_EMAIL }}
   ARCHITECT_PASSWORD: ${{ secrets.ARCHITECT_PASSWORD }}
-  ARCHITECT_ACCOUNT: neighborschools
+  ARCHITECT_ACCOUNT: tjhiggins
 
   PLATFORM_NAME: architect
-  COMPONENT_NAME: neighborschools
+  COMPONENT_NAME: test-nuxt
   PREVIEW_TAG: preview-${{ github.event.number }}
 
 jobs:
@@ -40,8 +40,6 @@ jobs:
         run: architect environment:create ${{ env.PREVIEW_TAG }} --platform ${{ env.PLATFORM_NAME }} --ttl=1d || exit 0
       - name: Deploy component
         run: architect deploy --auto-approve -e ${{ env.PREVIEW_TAG }} ${{ env.COMPONENT_NAME }}:${{ env.PREVIEW_TAG }}
-      - name: Sync
-        run: architect exec -e ${{ env.PREVIEW_TAG }} neighborschools.services.server -- "sh -c \"export ARC_SYNC=1; npm run sync\""
 
   architect_remove_preview:
     if: github.event.action == 'closed'
