@@ -16,7 +16,7 @@ env:
   ARCHITECT_PASSWORD: ${{ secrets.ARCHITECT_PASSWORD }}
   ARCHITECT_ACCOUNT: tjhiggins
 
-  PLATFORM_NAME: architect
+  PLATFORM_NAME: public
   COMPONENT_NAME: test-nuxt
   PREVIEW_TAG: preview-${{ github.event.number }}
 
