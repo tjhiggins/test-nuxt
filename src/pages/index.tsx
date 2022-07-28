@@ -9,7 +9,7 @@ export default () => {
         <v-col>
           <HeroComponent
             title={title}
-            subtitle="Starter project showing how to use JSX with Typescript and Nuxt.js!!!!"
+            subtitle="Starter project showing how to use JSX with Typescript and Nuxt.js!!!!!!!!"
           />
         </v-col>
       </v-row>
