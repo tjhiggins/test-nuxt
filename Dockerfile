@@ -7,6 +7,7 @@ RUN npm install
 COPY . .
 
 ARG NODE_ENV
+RUN echo "hmm"
 RUN if [ "$NODE_ENV" == "production" ]; then npm run build; fi
 
 CMD [ "npm", "start" ]
