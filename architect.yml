@@ -39,3 +39,5 @@ interfaces:
     description: Exposes the webapp to outside consumers
     ingress:
       subdomain: app
+      ip_whitelist:
+        - 96.230.17.101
